@@ -5,6 +5,8 @@ import br.com.dificuldadezero.management.jdbc.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductDAO {
 
@@ -13,7 +15,7 @@ public class ProductDAO {
     private ProductDAO() {
     }
 
-    public ProductDAO getInstance() {
+    public static ProductDAO getInstance() {
         if (productDAO == null) {
             productDAO = new ProductDAO();
         }
@@ -27,6 +29,7 @@ public class ProductDAO {
         Product product = null;
         if (rs.next()) {
             product = new Product();
+            //product.setA_venda(rs.getBoolean("a_venda"));
             //product.setId( rs.getInt("id") );
             //product.setName( rs.getString("name") );
             //product.setBilitikiwiki( rs.getString("NOO") );
@@ -36,5 +39,24 @@ public class ProductDAO {
         stmt.close();
         conn.close();
         return product;
+    }
+    
+    public List<Product> getAllProduct() throws Exception {
+        Connection conn = ConnectionFactory.open();
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM product");
+        List<Product> productList = new ArrayList<>();
+        while(rs.next()){
+            Product product = new Product();
+            //product.setId( rs.getInt("id") );
+            //product.setName( rs.getString("name") );
+            //product.setBilitikiwiki( rs.getString("NOO") );
+            //product.setBrand( rs.getInt("age") );
+            productList.add(product);
+        }
+        rs.close();
+        stmt.close();
+        conn.close();
+        return productList;
     }
 }
