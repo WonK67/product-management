@@ -1,7 +1,7 @@
 package br.com.dificuldadezero.management.dao;
 
 import br.com.dificuldadezero.management.dto.Product;
-import br.com.dificuldadezero.management.jdbc.ConnectionFactory;
+import br.com.dificuldadezero.management.tools.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;

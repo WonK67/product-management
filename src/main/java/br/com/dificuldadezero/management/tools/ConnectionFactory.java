@@ -1,4 +1,4 @@
-package br.com.dificuldadezero.management.jdbc;
+package br.com.dificuldadezero.management.tools;
 
 import java.sql.Connection;
 import java.sql.Driver;

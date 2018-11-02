@@ -81,7 +81,7 @@ public class ProductHibernateDAO {
                    }
          }
   
-         public void removeById(final int id) {
+         public void removeById(final long id) {
                    try {
                             Product product = getById(id);
                             remove(product);
