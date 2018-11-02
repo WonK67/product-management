@@ -1,0 +1,7 @@
+/home/wonk/NetBeansProjects/product-management/src/main/java/br/com/dificuldadezero/management/Main.java
+/home/wonk/NetBeansProjects/product-management/src/main/java/br/com/dificuldadezero/management/tools/SwaggerConfig.java
+/home/wonk/NetBeansProjects/product-management/src/main/java/br/com/dificuldadezero/management/controller/ProductController.java
+/home/wonk/NetBeansProjects/product-management/src/main/java/br/com/dificuldadezero/management/dto/Product.java
+/home/wonk/NetBeansProjects/product-management/src/main/java/br/com/dificuldadezero/management/dao/ProductDAO.java
+/home/wonk/NetBeansProjects/product-management/src/main/java/br/com/dificuldadezero/management/tools/ConnectionFactory.java
+/home/wonk/NetBeansProjects/product-management/src/main/java/br/com/dificuldadezero/management/dao/ProductHibernateDAO.java
