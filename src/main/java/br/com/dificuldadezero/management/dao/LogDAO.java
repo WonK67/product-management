@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.dificuldadezero.management.dao;
 
 import br.com.dificuldadezero.management.dto.Log;
-import br.com.dificuldadezero.management.dto.Product;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,20 +10,20 @@ import javax.persistence.Persistence;
  *
  * @author wonk
  */
-public class LogHibernateDAO {
+public class LogDAO {
 
-    private static LogHibernateDAO instance;
+    private static LogDAO instance;
     protected EntityManager entityManager;
 
-    public static LogHibernateDAO getInstance() {
+    public static LogDAO getInstance() {
         if (instance == null) {
-            instance = new LogHibernateDAO();
+            instance = new LogDAO();
         }
 
         return instance;
     }
 
-    private LogHibernateDAO() {
+    private LogDAO() {
         entityManager = getEntityManager();
     }
 
@@ -42,9 +36,9 @@ public class LogHibernateDAO {
         return entityManager;
     }
 
-    @SuppressWarnings("unchecked")
-    public List<Product> findAll() {
-        return entityManager.createQuery("FROM " + Product.class.getName()).getResultList();
+    public List<Log> findRecentLogs(long id_log) {
+        String hql = "FROM Log log WHERE log.id_log > " + id_log;
+        return entityManager.createQuery(hql).getResultList();
     }
 
     public void persist(Log log) {
